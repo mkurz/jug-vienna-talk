@@ -1,4 +1,4 @@
-name := """myproject"""
+name := """01_Dependency-Injection"""
 
 version := "1.0-SNAPSHOT"
 
