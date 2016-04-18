@@ -33,7 +33,10 @@ public class FormattersProvider implements Provider<Formatters> {
 				.register(String.class, new AnnotationCustomFormatFormatter());
 	}
 		
-	// -- URL
+	
+	
+
+	// -- A custom formatter:
 	
 	/**
 	 * Defines the format for a Url field.

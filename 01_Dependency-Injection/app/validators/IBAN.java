@@ -13,8 +13,6 @@ import play.data.Form.Display;
 
 /**
  * Checks if a value is valid IBAN.
- * 
- * @author mkurz
  */
 @Target({FIELD})
 @Retention(RUNTIME)

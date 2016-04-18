@@ -13,16 +13,14 @@ import views.html.myform;
 
 public class FormController extends Controller {
 
-	@Inject
-	private FormFactory formFactory;
 	
     public Result showForm() {
-    	final Form<PersonForm> form = formFactory.form(PersonForm.class).fill(new PersonForm("Chuck", "Norris", new Date()));
+    	final Form<PersonForm> form = Form.form(PersonForm.class).fill(new PersonForm("Chuck", "Norris", new Date()));
     	return ok(myform.render(form));
     }
 
     public Result saveForm() {
-    	final Form<PersonForm> form = formFactory.form(PersonForm.class).bindFromRequest();
+    	final Form<PersonForm> form = Form.form(PersonForm.class).bindFromRequest();
 
     	if(form.hasErrors()) {
     		return badRequest(myform.render(form));
