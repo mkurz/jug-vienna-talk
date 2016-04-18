@@ -1,5 +1,13 @@
 package controllers;
 
+import javax.inject.Inject;
+
+import composition.DoSomething;
+import play.Configuration;
+import play.Environment;
+import play.Logger;
+import play.i18n.Messages;
+import play.i18n.MessagesApi;
 import play.mvc.*;
 
 import views.html.*;
@@ -10,14 +18,28 @@ import views.html.*;
  */
 public class HomeController extends Controller {
 
-    /**
-     * An action that renders an HTML page with a welcome message.
-     * The configuration in the <code>routes</code> file means that
-     * this method will be called when the application receives a
-     * <code>GET</code> request with a path of <code>/</code>.
-     */
+//	@Inject
+//	private MessagesApi messagesApi;
+	
+//	@Inject
+//	private Environment env;
+	
+//	@Inject
+//	private Configuration config;
+	
+	// Not static anymore!
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+    	
+    	Logger.info("Inside index action");
+    	
+    	if(play.Play.isDev()) {
+    		// do something only for dev mode
+    	}
+    	
+    	// Read config
+    	play.Play.application().configuration().getString("mykey");
+    	
+    	return ok(Messages.get("hello"));
     }
 
 }

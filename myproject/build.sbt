@@ -11,3 +11,7 @@ libraryDependencies ++= Seq(
   cache,
   javaWs
 )
+
+// add custom repo 
+// resolvers += Resolver.url("In-house Repository stable", url("https://mycompany.com/repo"))(Resolver.ivyStylePatterns)
+// resolvers += Resolver.sonatypeRepo("snapshots")

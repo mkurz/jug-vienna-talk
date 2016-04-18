@@ -1,0 +1,10 @@
+hello=Hallo!
+
+
+
+
+#formats.date=dd.MM.YYYY
+
+
+constraint.iban=Has to be valid IBAN
+error.iban=Invalid IBAN
